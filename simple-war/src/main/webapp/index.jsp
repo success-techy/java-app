@@ -1,5 +1,5 @@
 <html>
 <body>
-Hello v1. The time is <%= new java.util.Date().toString() %>.
+<h1> Code updated</h1>
 </body>
 </html>
