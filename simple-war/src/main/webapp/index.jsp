@@ -1,5 +1,5 @@
 <html>
 <body>
-<h1> Jenkins is Deployed the tomcat  successfully stage 2 </h1>
+<h1> Auto Build is working successfully </h1>
 </body>
 </html>
