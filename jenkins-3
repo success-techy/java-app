@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    stages {
+        stage('git clone'){
+            steps{
+                git branch: 'main', url: 'https://github.com/manasa-tecky/my-code.git'
+            }
+        }
+        stage('artificat creation'){
+            steps{
+                sh'''
+                cd $WORKSPACE/simple-war
+                sudo /opt/maven/bin/mvn clean package
+                '''
+                
+            }
+        }
+        stage('Deployment'){
+            steps{
+                sh'''
+                sudo cp $WORKSPACE/simple-war/target/*.war /application/tomcat/webapps
+                '''
+            }
+        }
+           
+    }
+}
