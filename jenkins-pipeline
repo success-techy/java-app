@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    
+ stages {
+     stage('Git Clone') {
+         steps {
+             git branch: 'main', url: 'https://github.com/success-techy/java-app.git'
+         }
+         
+     }
+     stage('Create Artificate') {
+         steps {
+             sh'''
+             cd simple-war
+             sudo /opt/maven/bin/mvn clean package
+             '''
+         }
+     }
+     stage('Deployment') {
+         steps {
+             sh'''
+             sudo cp $WORKSPACE/simple-war/target/*.war /application/tomcat/webapps
+             '''
+         }
+     }
+     
+ }
+}
