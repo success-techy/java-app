@@ -1,5 +1,5 @@
 <html>
 <body>
-<h1> Testing - Jenkins Deplymeny </h1>
+<h1> Testing - Jenkins Deplyment by Auto Build </h1>
 </body>
 </html>
